@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="INFO">
+	<appenders>
+		<!-- 
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%d{ISO8601}] [%t] %-5level %logger{6} - %msg%n"/>
+		</Console>
+		-->
+			
+		 <RollingFile name="RollingFile" fileName="c:/logs/rolling.log" filePattern="c:/logs/rolling-%d{yyyy-MM-dd} -%i.log">   
+		<!-- <RollingFile name="RollingFile" fileName="./logs/rolling.log" filePattern="./logs/rolling-%d{yyyy-MM-dd} -%i.log"> -->
+			<Policies>
+				<OnStartupTriggeringPolicy/>
+			</Policies>
+			<DefaultRolloverStrategy fileIndex="max" max="10"/>
+			<!--  layout of debug messages is: 
+			    calling defect level,  miliseconds sence app start,  row # of calling logger, class sending log msg 
+			 -->
+			<PatternLayout pattern="%-5p %8r %3L %c{1} - %m%n"/>
+		</RollingFile>
+		</appenders>
+			<loggers>
+				/!-- the logger name needs to be the same as the package name. It IS CaSeSeNsItIve -->
+				<logger name="pi4j_scalaStuff" level="debug" additivity="false">  <!-- The logger name is the name of the package -->
+				<!--  <appender-ref ref="Console"/>  -->
+				<appender-ref ref="RollingFile"/>
+			</logger>
+			<root level="info">
+				<appender-ref ref="RollingFile"/>
+			</root>
+	</loggers>
+</configuration>
