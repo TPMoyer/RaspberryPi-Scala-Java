@@ -9,9 +9,9 @@ Working code is shared which
 
 Background:    I develop on my fastest local machine and ssh the compiled jar to my target
 environment for execution.   My targets are remote hadoop clusters at my day job, and 
-RaspberryPi at night.  Have experienced success with java development on different platforms
-such as           dev on 32bit windows for 64 bit hadoop  
-and the current   dev on 64bit windows for 32bit ARM linux (the RaspberryPi)
+RaspberryPi at night.  Have experienced success with java development on different platforms  
+such as         dev on 32bit windows for 64 bit hadoop    
+and the current      dev on 64bit windows for 32bit ARM linux (the RaspberryPi)  
     Eclipse, and the ScalaIDE version of Eclipse, offer a time-saveing option for this use case. 
 In the dialog for creating a runnable jar, one can opt for library handling:
 "copy required libraries into a sub-folder next to the generated JAR"
