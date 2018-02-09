@@ -53,9 +53,31 @@ The initial short form is:
     commons-csv.jar  https://commons.apache.org/proper/commons-csv/download_csv.cgi   
     
    
-ScalaIDE... workspace and project setup   on the development workstation  
-Clone or Download/unzip this project to a location of your choice
-    
+Workspace and project setup   on the development workstation  
+Clone or Download/unzip this repo to a location of your choice.
+ScalaIDE...  wait for the Eclipse Launcher dialog...  point the workspace entryfield to the directory   RPi_Scala_Java_workspace...
+ok...   File...   import... Maven...   Existing Maven Project...   next... browse... 
+point toward the directory  RPI_Scala_Java_project...   ok... 
+smile if the Import Maven Projects dialog has an entry in the projects: field and there is a checkmark in the box next to /pom.xml...
+finish...   It may take some time for eclipse to download all the resourses in the pom.xml file.  
+At this point I showed a square red x splorch in the Package Explorer panel on the collapsed RPi_Scala_java_project,  and the Problems panel showed a red x circle of collapsed Erros(37 items)
+Expand the Package Explorer RPi_Scala_Java_project.
+right-mouse-click on the Package Explorer RPi_Scala_Java_project... new... folder... in the Folder Name field type   external_jars
+Finish
+Go out to your OS and copy-or-move commons-csv.jar to the newly created
+$myLocation/RPi_Scala_Java_workspace/RPi_Scala_Java_project/external_jars directory.
+Similarly find a scala-library-2.11.8.jar and copy it to that same directory.
+right-mouse-click on the Package Explorer RPi_Scala_Java_project... refresh...
+right-mouse-click on the Package Explorer RPi_Scala_Java_project... build path... configure build path... click on the Libraries tab... 
+Add External Jars...   navigate to your external_jars directory... select both the commons-csv.jar and the scala-library-2.11.8.jar... open...   double-click on the  Scala Library container[2.12.2]...   click on the   Fixed Scala Library container 2.11.8... finish 
+double-click on the JRE System Library...   Environments...   JavaSE-1.8...  click on the best match in the Compatible JREs; seciton...
+ok... finish... ok
+Look in the lower right corner of the IDE and you should see "building" progress blue bars for some 10's of seconds.
+When buildin is complete, you should have no red splorch on the Package Explorer RPi_Scala_Java_project
+and the Problems panel should have only yellow warnings.
+
+
+
 
 
 0_run_jar.sh   is a demo of running a runnable jar, as a runnable jar.   Whatever main class
