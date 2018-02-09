@@ -12,6 +12,7 @@ environment for execution.   My targets are remote hadoop clusters at my day job
 RaspberryPi at night.  Have experienced success with java development on different platforms  
 such as         dev on 32bit windows for 64 bit hadoop    
 and the current      dev on 64bit windows for 32bit ARM linux (the RaspberryPi)  
+
     Eclipse, and the ScalaIDE version of Eclipse, offer a time-saveing option for this use case. 
 In the dialog for creating a runnable jar, one can opt for library handling:
 "copy required libraries into a sub-folder next to the generated JAR"
@@ -20,16 +21,16 @@ directory can be copied to the remote platform only once. The $myJarName.jar has
 contains all the code from my .java and .scala programming.   This makes the 
 copy-jar-from-development-platform-to-app-platform portion of the programmers life shorter. 
 How I spend my days and nights:
-   ( think it's fixed,
-     compile, 
-     copy-jar-from-development-platform-to-app-platform,
-     execute,
-     fail,
-     copy-diagnostics-log-to-development-platform,
-     figure out what went wrong,
-     program the fix
-    )
-     repeat
+      ( think it's fixed,
+        compile, 
+        copy-jar-from-development-platform-to-app-platform,
+        execute,
+        fail,
+        copy-diagnostics-log-to-development-platform,
+        figure out what went wrong,
+        program the fix
+      )
+      repeat
 Making any of these steps shorter is a always desireable.  
 
 If, on the other hand,  you are one of the programmers who work by setting breakpoints 
@@ -38,14 +39,18 @@ or restrict your application platforms to those which can support your IDE of ch
 My exploration suggests that eclipse does not run well on a 1GB 1GHz ARM platform like 
 the current RaspberryPi.
 
-This readme will be expanded as time and requests occur.
-The initial short form is:
- Raspberry Pi side:
-    General setup and I2C specifics are well documented in several sources.  I like the Adafruit series
+This readme will be expanded as time and requests occur.  
+
+Raspberry Pi side:
+=================
+* General setup and I2C specifics are well documented in several sources.  I like the Adafruit series
        https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
-    Scala... not needed.  Everything is compiled to java before it gets to the Pi
+* bc language to allow calculations within bash scripts         sudo apt-get install bc  
+* Scala... not needed.  Everything is compiled to java before it gets to the Pi
   
-  Development Workstation... Download and install
+Development Workstation
+=======================
+Download and install
     ScalaIDE   http://scala-ide.org/download/sdk.html    big green button    
     Java    google Java SDK... click on the oracle link for the latest (currently 1.9)
     MobaXTerm    https://mobaxterm.mobatek.net/     or alternately WinSCP  https://winscp.net/eng/download.php
