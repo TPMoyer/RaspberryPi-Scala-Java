@@ -3,8 +3,8 @@ GPIO and Pi4J and homebrew for the RaspberryPi, written in Scala and/or Java
 
 This is an eclipse maven workspace for RaspberryPi GPIO control using Scala and/or Java.  
 Working code is shared which  
- 1) Blink a few LED's (unrepentent grab of the Pi4J Java, port to Scala was first success)
- 2) Read a TSL2561 lux sensor 
+ 1) Blink a few LED's (unrepentent grab of the Pi4J Java, port to Scala was first success)  
+ 2) Read a TSL2561 lux sensor   
  3) Read an MMA8451 3 axis 14 bit accelerometer
 
 Background:    I develop on my fastest local machine and ssh the compiled jar to my target
@@ -39,14 +39,12 @@ or restrict your application platforms to those which can support your IDE of ch
 My exploration suggests that eclipse does not run well on a 1GB 1GHz ARM platform like 
 the current RaspberryPi.
 
-This readme will be expanded as time and requests occur.  
-
 Raspberry Pi side:
 =================
-**RTFM**  If you're new to the raspberryPi an excellent resource is the [https://www.raspberrypi.org/help/](https://www.raspberrypi.org/help/)  
+**RTFM**  If you're new to the raspberryPi an excellent resource is the [https://www.raspberrypi.org/help/](https://www.raspberrypi.org/help/)  
 To get full function from this repo, you should enable I2C, and SSH through the  
      RPi_Icon...   Preferences...   Raspberrry Pi COnfiguration...   interfaces tab...    
-I have a camera on my Pi, and use arduinos through the USB , and like to connect to my pi with VNC, so I also have the Camera, SPI, and VNC interfaces enabled on this same dialog tab.
+I have a camera on my Pi, and use arduinos through the USB , and like to connect to my RPi with VNC, so I also have the Camera, SPI, and VNC interfaces enabled on this same dialog tab.
  
 **Download/install the following:**  
 * wiringPi   [https://projects.drogon.net/raspberry-pi/wiringpi/](https://projects.drogon.net/raspberry-pi/wiringpi/) is his official site.  
@@ -54,12 +52,12 @@ I have a camera on my Pi, and use arduinos through the USB , and like to connect
 You DO need his library, not the one packaged with NOOBS, because Gordon updated his code Dec 2017 to recognize the now current RPi_3B, (the NOOBS WiringPi version says "not recognized" on a 3B)   
 * bc language   to allow calculations within bash scripts  
       sudo apt-get install bc  
-* Scala...   not needed.  Everything is compiled to java before it gets to the Pi
+* Scala...   not needed.      Everything is compiled java before it gets to the RPi
 
 **bring the bash scripts from the RaspberryPi-Scala-Java repo**  
 Create a "working" directory at a location of your choice
 copy the dozen-or-so files in your workstation ``/RPi_Scala_Java_workspace/RPi_Scala_Java_project/src/main/resources/Linux_Files/*``  
-into this new RPi directory.   I use MobaXTerm for this, but WinSCP is a viable choice.
+into this new RPi directory.   I use MobaXTerm for this, but WinSCP is a viable choice, puttySCP if you are still in the dark ages of no-GUI.
 
   
 Development Workstation
@@ -138,9 +136,12 @@ If it completes with warnings you're still good to go.
 **switch over to the RPi**  
 That can be done with either mobaXTerm, putty, VNC, or moving over to the actual RPI (if you have a keyboard and display).  
  Open a terminal and cd (change directory) to your working directory.   
-chmod +x *.sh 
-type the following 5 keys:   ./0  the TAB key   the Enter key
-Text should appear on the console, and voltage should appear on GPIO pins 29,28,27 and 26.  and If you have connected the RPI to LED's according to [https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-1-blinking-led-super-kit-for-raspberrypi.html](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-1-blinking-led-super-kit-for-raspberrypi.html) the LED's should blink.  (yes I changed which pins are used)
+chmod +x *.sh   
+type the following 5 keys:   ./0  the TAB key   the Enter key  
+ Text should appear on the console,  
+ voltage should appear on GPIO pins 29,28,27 and 26.  
+  and If you have connected the RPI to LED's according to [https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-1-blinking-led-super-kit-for-raspberrypi.html](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-1-blinking-led-super-kit-for-raspberrypi.html)  
+the LED's should blink.  (yes I had changed which pins are used)
 
 
 The Several Apps
