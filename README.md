@@ -128,7 +128,8 @@ A Progress dialog will appear and then a console panel, and then a lot of red te
 **All the stuff above is one time only.  Editing/developing code in either java or Scala do not require any of the above steps to be repeated.**
 
 * compile a runnable jar  
- On the menu bar    File... Export... click on the boxed + next to Java... Runnable Jar file... In the newly opened Runnable JAR File Export dialog, click on the expander on the right side of the empty Launch configuration entryfield... Click on the BlinkLEDs... click on the Browse button and navigate to the ``$myLocation/RPi_Scala_Java_workspace/RPi_Scala_Java_project/target`` directory... in the File name entryfield type ``RPi_Scala_Java.jar``...  Save... change the Library handling to select ``Copy required libraries into a sub-folder next ot hte generated JAR``... Finish... Click on the ``do not show this message again``... ok... yes... ok  
+ On the menu bar    File... Export... click on the boxed + next to Java... Runnable Jar file... In the newly opened Runnable JAR File Export dialog, click on the expander on the right side of the empty Launch configuration entryfield... Click on the BlinkLEDs... click on the Browse button and navigate to the ``$myLocation/RPi_Scala_Java_workspace/RPi_Scala_Java_project/target`` directory... in the File name entryfield type ``RPi_Scala_Java.jar``...  Save... change the Library handling to select  
+``Copy required libraries into a sub-folder next to the generated JAR``... Finish... Click on the ``do not show this message again``... ok... yes... ok  
 If it completes with warnings you're still good to go. 
 * copy the Jar and the _lib to the RPi
  Open your mobaXTerm or WinSCP and copy paste the ``RPI_Scala_Java_lib`` directory (about 130MB) and the ``RPI_Scala_Java.jar`` (about 300KB) into the RPi working directory.
